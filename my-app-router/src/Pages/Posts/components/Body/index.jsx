@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import { getPosts } from '../../../../services/getPosts';
+import { Posts_URL } from '../../../../constants/server';
 import { Card } from './components/Card';
 
 export function Body() {
@@ -9,9 +10,8 @@ export function Body() {
 
   useEffect(() => {
     setIsLoading(true);
-    getPosts().then(body => setPosts(body));
+    getPosts(Posts_URL).then(body => setPosts(body));
     setIsLoading(false);
-    console.log(getPosts().then());
   }, [])
 
   return (

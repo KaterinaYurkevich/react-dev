@@ -12,7 +12,7 @@ export function Card (props) {
           <StoryCard.Text className="cards_text">
             {body}
           </StoryCard.Text>
-          <Link to={`/More about this/${id}`} className="card-button">Read more</Link>
+          <Link to={`/${id}`} className="card-button">Read more</Link>
       </StoryCard.Body>
     </StoryCard>
   )

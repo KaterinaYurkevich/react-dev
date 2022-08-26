@@ -1,9 +1,8 @@
 import axios from 'axios';
-import { Posts_URL } from '../constants/server';
 
-export async function getPosts() {
+export async function getPosts(url) {
     try {
-        const response = await axios.get(Posts_URL);
+        const response = await axios.get(url);
         return response.data
     } catch (error) {
         console.error(error);

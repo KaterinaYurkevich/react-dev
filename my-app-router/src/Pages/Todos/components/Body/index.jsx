@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
-import { getTodos } from '../../../../services/getTodos';
+import { getPosts } from '../../../../services/getPosts';
+import { Todos_URL } from '../../../../constants/server';
 import { Card } from './components/Card';
 
 export function Body() {
@@ -9,7 +10,7 @@ export function Body() {
 
   useEffect(() => {
     setIsLoading(true);
-    getTodos().then(body => setTodos(body));
+    getPosts(Todos_URL).then(body => setTodos(body));
     setIsLoading(false);
   }, [])
   
